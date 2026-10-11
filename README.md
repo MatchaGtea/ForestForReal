@@ -106,7 +106,17 @@ Backend เป็นต้นแบบ **หนึ่ง process** งานใ�
 
 ## สร้างและเผยแพร่ Pages
 
-`.github/workflows/pages.yml` build และ deploy อัตโนมัติเมื่อ push `main` ใช้ GitHub Actions เป็น publishing source ไม่มี GEE secrets ใน workflow
+เว็บนี้เผยแพร่จาก branch **`gh-pages` / root** โดย build และสแกนในเครื่องก่อน push GitHub Pages จะนำ branch นี้ไป deploy โดยอัตโนมัติ ไม่ต้องตั้งเซิร์ฟเวอร์หรือใส่ GEE secrets
+
+เผยแพร่เวอร์ชันใหม่หลัง `npm ci` และติดตั้ง [Gitleaks](https://github.com/gitleaks/gitleaks), GitHub CLI และล็อกอิน GitHub แล้ว:
+
+```sh
+python3 scripts/publish_pages.py
+```
+
+สคริปต์ build โหมดผลบันทึก สแกนด้วย Gitleaks และอัปเดต `gh-pages` ด้วย commit ใหม่โดยไม่ force push สามารถส่ง path ของ Gitleaks ด้วย `--gitleaks /path/to/gitleaks`
+
+มี workflow `pages.yml` และ `checks.yml` สำหรับใช้ Actions ภายหลัง แต่ปิดไว้ในบัญชีนี้: GitHub แจ้งว่าบัญชีมี billing issue และไม่เริ่มงาน Actions ทั่วไป การ deploy แบบ branch สำเร็จและไม่ต้องใช้ workflow สองไฟล์นี้ หากจะเปลี่ยนไป Actions ให้แก้ข้อจำกัดบัญชีก่อน เปิด workflow และเปลี่ยน Pages publishing source เป็น GitHub Actions
 
 ลอง build แบบเดียวกับ Pages บน macOS / Linux:
 
@@ -119,7 +129,7 @@ npm run preview
 
 เปิด `/ForestForReal/` บน URL ที่ preview แสดง สำหรับ PowerShell ตั้ง `$env:VITE_DEMO_MODE="true"` และ `$env:VITE_BASE_PATH="/ForestForReal/"` ก่อน build
 
-ถ้าเปลี่ยนชื่อ repo ให้แก้ `VITE_BASE_PATH` ใน workflow ด้วย Frontend รองรับ `VITE_API_BASE_URL` สำหรับ backend แยก แต่ทุกค่า `VITE_*` เปิดเผยต่อผู้เข้าชม ต้องใส่เฉพาะ URL/feature flag ห้ามใส่ secrets ดู [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)
+ถ้าเปลี่ยนชื่อ repo ให้ส่ง `--repo OWNER/NEW_REPO` ให้สคริปต์ และแก้ `VITE_BASE_PATH` ใน workflow ด้วยหากใช้ Actions Frontend รองรับ `VITE_API_BASE_URL` สำหรับ backend แยก แต่ทุกค่า `VITE_*` เปิดเผยต่อผู้เข้าชม ต้องใส่เฉพาะ URL/feature flag ห้ามใส่ secrets ดู [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)
 
 ## ความปลอดภัยของ token / key
 
