@@ -1,0 +1,293 @@
+{
+  "source": {
+    "kind": "real GEE cache snapshot; four cells retained for UI regression only",
+    "cache_file": "4eca7d9eb7d42bc4c93af2865c5e5722ebe9677a415d5d96b3ebdab4e82e1b24.json",
+    "project_id": "FP-001",
+    "method": "forestproof-1.0.1",
+    "created_at": "2026-10-10T16:04:27.915514+00:00",
+    "params": {
+      "baseline_start": "2023-01-01",
+      "baseline_end": "2023-04-01",
+      "comparison_start": "2025-01-01",
+      "comparison_end": "2025-04-01",
+      "window_m": 50,
+      "stride_m": 25
+    }
+  },
+  "grid": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                98.90067448305787,
+                18.8065518795827
+              ],
+              [
+                98.90020469351349,
+                18.80655162896322
+              ],
+              [
+                98.9002,
+                18.8065
+              ],
+              [
+                98.90067473637006,
+                18.806120210982073
+              ],
+              [
+                98.90067448305787,
+                18.8065518795827
+              ]
+            ]
+          ]
+        },
+        "id": "0",
+        "properties": {
+          "area_m2": 1335.4407424982226,
+          "confidence": 0.7187266858864848,
+          "coverage": 1,
+          "crs": "EPSG:32647",
+          "disagreement": 0.24410136906495777,
+          "id": "0-0",
+          "insufficient_fraction": 0,
+          "low_confidence": 0,
+          "missing": 0,
+          "ndvi_baseline": 0.7832161819103373,
+          "ndvi_change": 0.04533641882272781,
+          "ndvi_comparison": 0.8285526007330649,
+          "ndvi_sd_baseline": 0.11042297645385199,
+          "ndvi_sd_comparison": 0.04629179461954421,
+          "s_count_baseline": 15,
+          "s_count_comparison": 12,
+          "t_count_baseline": 14,
+          "t_count_comparison": 12,
+          "tree_baseline": 0.7194191277680096,
+          "tree_change": 0.006223752744348515,
+          "tree_comparison": 0.725642880512358,
+          "tree_sd_baseline": 0.03192057933102307,
+          "tree_sd_comparison": 0.013060674120930716,
+          "variable": 0.0538887270608797,
+          "classification": "persistent"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                98.90067421787019,
+                18.80700377258084
+              ],
+              [
+                98.90024577657407,
+                18.80700354406167
+              ],
+              [
+                98.90020469351349,
+                18.80655162896322
+              ],
+              [
+                98.90067448305787,
+                18.8065518795827
+              ],
+              [
+                98.90067421787019,
+                18.80700377258084
+              ]
+            ]
+          ]
+        },
+        "id": "2",
+        "properties": {
+          "area_m2": 2366.185838759702,
+          "confidence": 0.7236629894808034,
+          "coverage": 1,
+          "crs": "EPSG:32647",
+          "disagreement": 0.39581603851901037,
+          "id": "0-2",
+          "insufficient_fraction": 0,
+          "low_confidence": 0,
+          "missing": 0,
+          "ndvi_baseline": 0.806559048761564,
+          "ndvi_change": 0.0515182996359104,
+          "ndvi_comparison": 0.8580773483974742,
+          "ndvi_sd_baseline": 0.1053305258521164,
+          "ndvi_sd_comparison": 0.0310656566178564,
+          "s_count_baseline": 15,
+          "s_count_comparison": 12,
+          "t_count_baseline": 14,
+          "t_count_comparison": 12,
+          "tree_baseline": 0.725101254237931,
+          "tree_change": 0.0013639966787303245,
+          "tree_comparison": 0.7264652509166613,
+          "tree_sd_baseline": 0.027216828808941673,
+          "tree_sd_comparison": 0.012323114755199358,
+          "variable": 0.008965631744977585,
+          "classification": "mixed"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                98.9011484687148,
+                18.80745591750921
+              ],
+              [
+                98.90114823593308,
+                18.80785447119333
+              ],
+              [
+                98.9006738021577,
+                18.807712141399005
+              ],
+              [
+                98.90067395267496,
+                18.807455665557118
+              ],
+              [
+                98.9011484687148,
+                18.80745591750921
+              ]
+            ]
+          ]
+        },
+        "id": "22",
+        "properties": {
+          "area_m2": 1811.904539715033,
+          "confidence": 0.7275657946481338,
+          "coverage": 1,
+          "crs": "EPSG:32647",
+          "disagreement": 0,
+          "id": "2-6",
+          "insufficient_fraction": 0,
+          "low_confidence": 0,
+          "missing": 0,
+          "ndvi_baseline": 0.8167217245524997,
+          "ndvi_change": 0.05478065600371121,
+          "ndvi_comparison": 0.871502380556211,
+          "ndvi_sd_baseline": 0.09882393812538699,
+          "ndvi_sd_comparison": 0.038646242389444564,
+          "s_count_baseline": 15,
+          "s_count_comparison": 12,
+          "t_count_baseline": 14,
+          "t_count_comparison": 12,
+          "tree_baseline": 0.7275657946481338,
+          "tree_change": 0.0041014215597817765,
+          "tree_comparison": 0.7316672162079155,
+          "tree_sd_baseline": 0.023237048532061752,
+          "tree_sd_comparison": 0.005884658557026825,
+          "variable": 0,
+          "classification": "mixed"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                98.90114912852147,
+                18.80632618501128
+              ],
+              [
+                98.90153008090257,
+                18.806326386399423
+              ],
+              [
+                98.90162362660216,
+                18.80635189867224
+              ],
+              [
+                98.90162337875141,
+                18.8067783287627
+              ],
+              [
+                98.90114886460444,
+                18.80677807802685
+              ],
+              [
+                98.90114912852147,
+                18.80632618501128
+              ]
+            ]
+          ]
+        },
+        "id": "33",
+        "properties": {
+          "area_m2": 2486.112397025161,
+          "confidence": 0.7192031191401368,
+          "coverage": 1,
+          "crs": "EPSG:32647",
+          "disagreement": 0.9574132492113565,
+          "id": "4-1",
+          "insufficient_fraction": 0,
+          "low_confidence": 0,
+          "missing": 0,
+          "ndvi_baseline": 0.8113845454284349,
+          "ndvi_change": 0.050335673582723575,
+          "ndvi_comparison": 0.8617202190111585,
+          "ndvi_sd_baseline": 0.09948422475375385,
+          "ndvi_sd_comparison": 0.033769958298838165,
+          "s_count_baseline": 15,
+          "s_count_comparison": 12,
+          "t_count_baseline": 14,
+          "t_count_comparison": 12,
+          "tree_baseline": 0.7236785565195775,
+          "tree_change": -0.004427355138534829,
+          "tree_comparison": 0.7192512013810426,
+          "tree_sd_baseline": 0.02390196183066264,
+          "tree_sd_comparison": 0.010556683296189995,
+          "variable": 0,
+          "classification": "mixed"
+        }
+      }
+    ]
+  },
+  "inspection_points": [
+    {
+      "cell_id": "4-1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          98.90138624590195,
+          18.806564988349542
+        ]
+      },
+      "reason": "mixed"
+    },
+    {
+      "cell_id": "0-2",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          98.90044979848331,
+          18.806777711822185
+        ]
+      },
+      "reason": "mixed"
+    },
+    {
+      "cell_id": "2-6",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          98.90091113561567,
+          18.807584029454105
+        ]
+      },
+      "reason": "mixed"
+    }
+  ]
+}

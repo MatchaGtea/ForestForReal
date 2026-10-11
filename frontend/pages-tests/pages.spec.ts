@@ -1,0 +1,91 @@
+import {test,expect} from '@playwright/test';
+
+test('Pages loads real saved imagery under the repository path without a backend',async({page})=>{
+  const errors:string[]=[];const forbidden:string[]=[];
+  page.on('pageerror',error=>errors.push(error.message));
+  page.on('request',request=>{const url=new URL(request.url());if(url.pathname.startsWith('/api/')||/earthengine\.googleapis\.com|[?&]token=/.test(url.href))forbidden.push(url.pathname);});
+  await page.goto('./');
+  await expect(page).toHaveTitle(/ForestProof/);
+  await expect(page.locator('.project-card')).toHaveCount(10);
+  await expect(page.locator('.recorded-banner')).toContainText('ยังไม่คำนวณช่วงวันที่ใหม่');
+  await expect(page.locator('.brand')).toHaveAttribute('href','/ForestForReal/');
+  await page.getByRole('button',{name:'ลองดอยสุเทพ',exact:false}).click();
+  await page.getByRole('button',{name:'เปิดผลที่บันทึกไว้',exact:true}).click();
+  await expect(page.locator('.comparison-placeholder')).toHaveCount(0);
+  await expect(page.locator('.comparison-metrics strong')).not.toHaveText(['—','—','—','—']);
+  await expect.poll(()=>page.locator('.recorded-image').evaluateAll(images=>images.every(image=>(image as HTMLImageElement).complete&&(image as HTMLImageElement).naturalWidth>0))).toBe(true);
+  await expect(page.locator('.recorded-image')).toHaveCount(4);
+  const before=await page.locator('.comparison-map').first().locator('svg path').first().boundingBox();
+  await page.getByRole('button',{name:'ซูมเข้าทั้งสองภาพ',exact:true}).click();
+  const boxes=await page.locator('.comparison-map svg').evaluateAll(svgs=>svgs.map(svg=>svg.getBoundingClientRect().width));
+  expect(boxes.length).toBeGreaterThanOrEqual(2);
+  expect(before!.width).toBeGreaterThan(0);
+  await page.getByLabel('แสดงสัญญาณต้นไม้',{exact:true}).check();
+  await expect(page.locator('.recorded-image')).toHaveCount(6);
+  await page.getByLabel('แสดงกริด',{exact:true}).uncheck();
+  await page.getByLabel('แสดงกริด',{exact:true}).check();
+  await page.getByRole('button',{name:'แผนที่เดียว',exact:true}).click();
+  await expect(page.locator('.map .recorded-image')).toHaveCount(1);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  expect(forbidden).toEqual([]);expect(errors).toEqual([]);
+});
+
+test('unrecorded dates show advice and never reuse old observations',async({page})=>{
+  await page.goto('./');
+  await page.getByRole('button',{name:'ลองดอยสุเทพ',exact:false}).click();
+  await page.getByRole('button',{name:'เปิดผลที่บันทึกไว้',exact:true}).click();
+  await expect(page.locator('.comparison-placeholder')).toHaveCount(0);
+  await page.getByRole('button',{name:'เปิดตั้งค่า',exact:true}).click();
+  await page.getByLabel('เริ่มช่วงฐาน',{exact:true}).fill('2021-01-01');
+  await expect(page.locator('.recorded-image')).toHaveCount(0);
+  await expect(page.locator('.comparison-metrics strong')).toHaveText(['—','—','—','—']);
+  await page.locator('.comparison-settings').getByRole('button',{name:'พับตั้งค่า',exact:true}).click();
+  await page.getByRole('button',{name:'เปิดผลที่บันทึกไว้',exact:true}).click();
+  await expect(page.getByRole('alert')).toContainText('ช่วงนี้ยังไม่มีผลที่บันทึกไว้');
+  await page.getByRole('alert').getByRole('button',{name:'ดูสิ่งที่ควรปรับ',exact:true}).click();
+  await page.getByRole('button',{name:'เลือกช่วงวันที่ที่บันทึกไว้',exact:true}).click();
+  await expect(page.locator('.date-recommendation')).toHaveCount(2);
+  await page.locator('.date-recommendation').filter({hasText:'2025-01-01 → 2025-04-01'}).filter({hasText:'2026-01-01 → 2026-04-01'}).getByRole('button',{name:'ใช้ช่วงวันที่นี้'}).click();
+  await expect(page.getByLabel('เริ่มช่วงฐาน',{exact:true})).toHaveValue('2025-01-01');
+  await expect(page.getByLabel('สิ้นสุดเปรียบเทียบ',{exact:true})).toHaveValue('2026-04-01');
+  await expect(page.locator('.recorded-image')).toHaveCount(0);
+  await page.locator('.comparison-settings').getByRole('button',{name:'พับตั้งค่า',exact:true}).click();
+  await page.getByRole('button',{name:'เปิดผลที่บันทึกไว้',exact:true}).click();
+  await expect(page.locator('.comparison-placeholder')).toHaveCount(0);
+  await expect(page.locator('[data-period=baseline] figcaption')).toContainText('2568');
+  await expect(page.locator('[data-period=comparison] figcaption')).toContainText('2569');
+});
+
+test('the saved insufficient case preserves missing values and offers sufficient dates',async({page})=>{
+  await page.goto('./');
+  await page.getByRole('button',{name:'ลองดอยสุเทพ',exact:false}).click();
+  await page.getByRole('button',{name:'เปิดตั้งค่า',exact:true}).click();
+  for(const [label,date] of [['เริ่มช่วงฐาน','2025-07-13'],['สิ้นสุดช่วงฐาน','2025-10-11'],['เริ่มเปรียบเทียบ','2026-07-13'],['สิ้นสุดเปรียบเทียบ','2026-10-11']])await page.getByLabel(label,{exact:true}).fill(date);
+  await page.locator('.comparison-settings').getByRole('button',{name:'พับตั้งค่า',exact:true}).click();
+  await page.getByRole('button',{name:'เปิดผลที่บันทึกไว้',exact:true}).click();
+  await expect(page.locator('.comparison-advice')).toContainText('ยังไม่เพียงพอ');
+  await expect(page.locator('.comparison-metrics strong')).toHaveText(['—','—','—','—']);
+  await page.getByRole('button',{name:'ดูสิ่งที่ควรปรับ',exact:true}).click();
+  await page.getByRole('button',{name:'เลือกช่วงวันที่ที่บันทึกไว้',exact:true}).click();
+  await expect(page.locator('.date-check-current')).toContainText('0%');
+  await expect(page.locator('.date-recommendation')).toHaveCount(2);
+  await expect(page.locator('.date-recommendation').first()).toContainText('100%');
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});
+
+test('catalog, other recorded projects, and source explanation remain usable',async({page})=>{
+  await page.goto('./');
+  await page.getByLabel('ค้นหาโครงการหรือบริษัท').fill('FP-004');
+  await page.locator('.suggestions button').first().click();
+  await expect(page.locator('.detail-title h2')).toContainText('เขาใหญ่');
+  await page.locator('.detail').getByRole('button',{name:'เปิดผลที่บันทึกไว้',exact:true}).click();
+  await expect(page.locator('.results')).toContainText('พื้นที่ผ่านเกณฑ์ร่วมอย่างน้อย 3 วัน: 100%');
+  await expect.poll(()=>page.locator('.map .recorded-image').evaluateAll(images=>images.length===1&&(images[0] as HTMLImageElement).naturalWidth>0)).toBe(true);
+  await page.getByRole('button',{name:'ข้อมูลและวิธีวิเคราะห์',exact:false}).click();
+  await expect(page.getByRole('dialog')).toContainText('Dynamic World');
+  await page.keyboard.press('Escape');
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await page.locator('.brand').click();
+  await expect(page.locator('.project-card')).toHaveCount(10);
+  await expect(page.locator('.recorded-banner')).toBeVisible();
+});

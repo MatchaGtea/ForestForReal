@@ -1,0 +1,582 @@
+[
+  {
+    "project_id": "FP-001",
+    "source": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N18E096_Map.tif",
+    "dataset": "ESA WorldCover 2021 v200",
+    "samples": [
+      [
+        [
+          98.90105,
+          18.806966666666664
+        ],
+        10
+      ],
+      [
+        [
+          98.9002,
+          18.8065
+        ],
+        10
+      ],
+      [
+        [
+          98.9007,
+          18.806099999999997
+        ],
+        10
+      ],
+      [
+        [
+          98.9018,
+          18.8064
+        ],
+        10
+      ],
+      [
+        [
+          98.902,
+          18.807299999999998
+        ],
+        10
+      ],
+      [
+        [
+          98.90129999999999,
+          18.8079
+        ],
+        10
+      ],
+      [
+        [
+          98.9003,
+          18.807599999999997
+        ],
+        10
+      ]
+    ],
+    "tree_class": 10,
+    "note": "Static land-cover siting check only. Does not establish project history or trends."
+  },
+  {
+    "project_id": "FP-002",
+    "source": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N18E096_Map.tif",
+    "dataset": "ESA WorldCover 2021 v200",
+    "samples": [
+      [
+        [
+          98.49205,
+          18.55796666666667
+        ],
+        10
+      ],
+      [
+        [
+          98.4912,
+          18.5575
+        ],
+        10
+      ],
+      [
+        [
+          98.49170000000001,
+          18.5571
+        ],
+        10
+      ],
+      [
+        [
+          98.4928,
+          18.5574
+        ],
+        10
+      ],
+      [
+        [
+          98.49300000000001,
+          18.5583
+        ],
+        10
+      ],
+      [
+        [
+          98.4923,
+          18.5589
+        ],
+        10
+      ],
+      [
+        [
+          98.49130000000001,
+          18.5586
+        ],
+        10
+      ]
+    ],
+    "tree_class": 10,
+    "note": "Static land-cover siting check only. Does not establish project history or trends."
+  },
+  {
+    "project_id": "FP-003",
+    "source": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N15E099_Map.tif",
+    "dataset": "ESA WorldCover 2021 v200",
+    "samples": [
+      [
+        [
+          101.52005000000001,
+          17.264966666666666
+        ],
+        10
+      ],
+      [
+        [
+          101.5192,
+          17.2645
+        ],
+        10
+      ],
+      [
+        [
+          101.5197,
+          17.2641
+        ],
+        10
+      ],
+      [
+        [
+          101.5208,
+          17.264400000000002
+        ],
+        10
+      ],
+      [
+        [
+          101.521,
+          17.2653
+        ],
+        10
+      ],
+      [
+        [
+          101.52029999999999,
+          17.265900000000002
+        ],
+        10
+      ],
+      [
+        [
+          101.5193,
+          17.2656
+        ],
+        10
+      ]
+    ],
+    "tree_class": 10,
+    "note": "Static land-cover siting check only. Does not establish project history or trends."
+  },
+  {
+    "project_id": "FP-004",
+    "source": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N12E099_Map.tif",
+    "dataset": "ESA WorldCover 2021 v200",
+    "samples": [
+      [
+        [
+          101.37304999999999,
+          14.444966666666666
+        ],
+        10
+      ],
+      [
+        [
+          101.3722,
+          14.4445
+        ],
+        10
+      ],
+      [
+        [
+          101.37270000000001,
+          14.4441
+        ],
+        10
+      ],
+      [
+        [
+          101.3738,
+          14.4444
+        ],
+        10
+      ],
+      [
+        [
+          101.37400000000001,
+          14.4453
+        ],
+        10
+      ],
+      [
+        [
+          101.3733,
+          14.4459
+        ],
+        10
+      ],
+      [
+        [
+          101.37230000000001,
+          14.4456
+        ],
+        10
+      ]
+    ],
+    "tree_class": 10,
+    "note": "Static land-cover siting check only. Does not establish project history or trends."
+  },
+  {
+    "project_id": "FP-005",
+    "source": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N12E099_Map.tif",
+    "dataset": "ESA WorldCover 2021 v200",
+    "samples": [
+      [
+        [
+          99.38205,
+          12.857966666666668
+        ],
+        10
+      ],
+      [
+        [
+          99.3812,
+          12.8575
+        ],
+        10
+      ],
+      [
+        [
+          99.38170000000001,
+          12.8571
+        ],
+        10
+      ],
+      [
+        [
+          99.3828,
+          12.8574
+        ],
+        10
+      ],
+      [
+        [
+          99.38300000000001,
+          12.8583
+        ],
+        10
+      ],
+      [
+        [
+          99.3823,
+          12.8589
+        ],
+        10
+      ],
+      [
+        [
+          99.38130000000001,
+          12.858600000000001
+        ],
+        10
+      ]
+    ],
+    "tree_class": 10,
+    "note": "Static land-cover siting check only. Does not establish project history or trends."
+  },
+  {
+    "project_id": "FP-006",
+    "source": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N15E099_Map.tif",
+    "dataset": "ESA WorldCover 2021 v200",
+    "samples": [
+      [
+        [
+          99.28605,
+          15.603966666666665
+        ],
+        10
+      ],
+      [
+        [
+          99.2852,
+          15.603499999999999
+        ],
+        10
+      ],
+      [
+        [
+          99.2857,
+          15.6031
+        ],
+        10
+      ],
+      [
+        [
+          99.2868,
+          15.603399999999999
+        ],
+        10
+      ],
+      [
+        [
+          99.287,
+          15.604299999999999
+        ],
+        10
+      ],
+      [
+        [
+          99.2863,
+          15.604899999999999
+        ],
+        10
+      ],
+      [
+        [
+          99.2853,
+          15.6046
+        ],
+        10
+      ]
+    ],
+    "tree_class": 10,
+    "note": "Static land-cover siting check only. Does not establish project history or trends."
+  },
+  {
+    "project_id": "FP-007",
+    "source": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N06E096_Map.tif",
+    "dataset": "ESA WorldCover 2021 v200",
+    "samples": [
+      [
+        [
+          98.51905000000001,
+          8.939966666666665
+        ],
+        10
+      ],
+      [
+        [
+          98.51820000000001,
+          8.939499999999999
+        ],
+        10
+      ],
+      [
+        [
+          98.51870000000001,
+          8.9391
+        ],
+        10
+      ],
+      [
+        [
+          98.5198,
+          8.9394
+        ],
+        10
+      ],
+      [
+        [
+          98.52000000000001,
+          8.940299999999999
+        ],
+        10
+      ],
+      [
+        [
+          98.5193,
+          8.9409
+        ],
+        10
+      ],
+      [
+        [
+          98.51830000000001,
+          8.9406
+        ],
+        10
+      ]
+    ],
+    "tree_class": 10,
+    "note": "Static land-cover siting check only. Does not establish project history or trends."
+  },
+  {
+    "project_id": "FP-008",
+    "source": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N06E099_Map.tif",
+    "dataset": "ESA WorldCover 2021 v200",
+    "samples": [
+      [
+        [
+          99.73905,
+          8.491966666666668
+        ],
+        10
+      ],
+      [
+        [
+          99.7382,
+          8.4915
+        ],
+        10
+      ],
+      [
+        [
+          99.73870000000001,
+          8.491100000000001
+        ],
+        10
+      ],
+      [
+        [
+          99.7398,
+          8.4914
+        ],
+        10
+      ],
+      [
+        [
+          99.74000000000001,
+          8.4923
+        ],
+        10
+      ],
+      [
+        [
+          99.7393,
+          8.4929
+        ],
+        10
+      ],
+      [
+        [
+          99.73830000000001,
+          8.492600000000001
+        ],
+        10
+      ]
+    ],
+    "tree_class": 10,
+    "note": "Static land-cover siting check only. Does not establish project history or trends."
+  },
+  {
+    "project_id": "FP-009",
+    "source": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N18E099_Map.tif",
+    "dataset": "ESA WorldCover 2021 v200",
+    "samples": [
+      [
+        [
+          101.08205,
+          19.204966666666664
+        ],
+        10
+      ],
+      [
+        [
+          101.0812,
+          19.2045
+        ],
+        10
+      ],
+      [
+        [
+          101.0817,
+          19.204099999999997
+        ],
+        10
+      ],
+      [
+        [
+          101.08279999999999,
+          19.2044
+        ],
+        10
+      ],
+      [
+        [
+          101.083,
+          19.205299999999998
+        ],
+        10
+      ],
+      [
+        [
+          101.08229999999999,
+          19.2059
+        ],
+        10
+      ],
+      [
+        [
+          101.0813,
+          19.205599999999997
+        ],
+        10
+      ]
+    ],
+    "tree_class": 10,
+    "note": "Static land-cover siting check only. Does not establish project history or trends."
+  },
+  {
+    "project_id": "FP-010",
+    "source": "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_N12E099_Map.tif",
+    "dataset": "ESA WorldCover 2021 v200",
+    "samples": [
+      [
+        [
+          101.72505,
+          12.924966666666668
+        ],
+        10
+      ],
+      [
+        [
+          101.7242,
+          12.9245
+        ],
+        10
+      ],
+      [
+        [
+          101.7247,
+          12.924100000000001
+        ],
+        10
+      ],
+      [
+        [
+          101.72579999999999,
+          12.9244
+        ],
+        10
+      ],
+      [
+        [
+          101.726,
+          12.9253
+        ],
+        10
+      ],
+      [
+        [
+          101.72529999999999,
+          12.9259
+        ],
+        10
+      ],
+      [
+        [
+          101.7243,
+          12.925600000000001
+        ],
+        10
+      ]
+    ],
+    "tree_class": 10,
+    "note": "Static land-cover siting check only. Does not establish project history or trends."
+  }
+]
